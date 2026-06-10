@@ -1,5 +1,5 @@
 {
-    "name": "xiaofeng/easemob-php",
+    "name": "easemob/easemob-php",
     "description": "PHP Server SDK for Easemob IM.",
     "type": "library",
     "license": "MIT",
@@ -7,7 +7,7 @@
     "homepage": "https://github.com/Easemob-Community/easemob-php-server-sdk",
     "authors": [
         {
-            "name": "xiaofeng",
+            "name": "easemob",
             "email": "wangfeng@easemob.com"
         }
     ],
