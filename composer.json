@@ -1,23 +1,33 @@
 {
-    "name": "maniac/easemob-php",
-    "description": "PHP Server SDK for IM.",
+    "name": "xiaofeng/easemob-php",
+    "description": "PHP Server SDK for Easemob IM.",
+    "type": "library",
     "license": "MIT",
+    "keywords": ["easemob", "im", "sdk", "chat"],
+    "homepage": "https://github.com/Easemob-Community/easemob-php-server-sdk",
     "authors": [
-      {
-          "name": "maniac",
-          "email": "maniac.liu@easemob.com"
-      }
+        {
+            "name": "xiaofeng",
+            "email": "wangfeng@easemob.com"
+        }
     ],
     "require": {
-      "php": ">=5.3.3"
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
     },
     "autoload": {
-      "files": [
-        "src/functions.php"
-      ],
-      "psr-4": {
-          "Easemob\\": "src/", 
-          "tests\\": "tests/"
-      }
+        "files": [
+            "src/functions.php"
+        ],
+        "psr-4": {
+            "Easemob\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "tests\\": "tests/"
+        }
     }
 }

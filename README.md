@@ -95,8 +95,7 @@ $user->create($data);
 ```
 
 ### 参考
-- PHP SDK 的 api 文档在 [这里](https://easemob.github.io/im-php-server-sdk/annotated.html)
-- PHP SDK 开源地址在 [这里](https://github.com/easemob/im-php-server-sdk)
+- PHP SDK 开源地址在 [这里](https://github.com/Easemob-Community/easemob-php-server-sdk)
 
 ### 常见问题
 

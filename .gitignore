@@ -5,3 +5,6 @@
 /docs/
 /doxygen/
 deploy.sh
+.vscode/
+AGENTS.md
+.qoder/
