@@ -1,5 +1,5 @@
 {
-    "name": "easemob/easemob-php",
+    "name": "easemob-community/easemob-php",
     "description": "PHP Server SDK for Easemob IM.",
     "type": "library",
     "license": "MIT",
