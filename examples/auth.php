@@ -36,6 +36,11 @@ echo '<pre>';
 var_dump($auth->getUserToken('user4', 'user4'));
  */
 
+/* 
+// 生成 Easemob userToken (支持自动创建用户)
+var_dump($auth->getUserTokenByUserId('userID',true));
+ */
+
 
 /* 
 // 生成仅含 AgoraChat 权限的 Agora userToken

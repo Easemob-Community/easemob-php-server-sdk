@@ -8,3 +8,4 @@ deploy.sh
 .vscode/
 AGENTS.md
 .qoder/
+examples/config.php

@@ -339,6 +339,53 @@ final class Auth
         }
     }
 
+    /**
+     * \~chinese
+     * \brief
+     * 通过用户 ID 获取用户 token
+     *
+     * @param  string  $username        环信 IM 用户 ID
+     * @param  boolean $autoCreateUser  用户不存在时是否自动创建用户，默认为 false
+     * @param  int     $expireInSeconds token 过期时间，单位：s；设置为 0 表示永久有效，不传则使用服务端默认值
+     * @return array                    用户 token 信息或者错误
+     *
+     * \~english
+     * \brief
+     * Get user token by user ID
+     *
+     * @param  string  $username        Easemob IM user ID
+     * @param  boolean $autoCreateUser  Whether to automatically create the user when it does not exist, default is false
+     * @param  int     $expireInSeconds Expiration time of token, unit: S; set to 0 for permanent, omit to use server default
+     * @return array                    User token information or error
+     */
+    public function getUserTokenByUserId($username, $autoCreateUser = false, $expireInSeconds = null)
+    {
+        $body = array(
+            'grant_type' => 'inherit',
+            'username' => $username,
+            'autoCreateUser' => $autoCreateUser,
+        );
+        if ($expireInSeconds !== null) {
+            $expireInSeconds = (int)$expireInSeconds;
+            $body['ttl'] = $expireInSeconds;
+        }
+
+        $appToken = $this->isAgora ? $this->getAgoraToken2easemobToken() : $this->getEasemobToken();
+        if (isset($appToken['code'])) {
+            return $appToken;
+        }
+
+        $headers = array(
+            'Authorization' => 'Bearer ' . $appToken,
+        );
+        $uri = $this->getBaseUri() . '/token';
+        $resp = Http::post($uri, $body, $headers);
+        if (!$resp->ok()) {
+            return \Easemob\error($resp);
+        }
+        return $resp->data();
+    }
+
     /// @cond
     /**
      * @ignore 获取请求头
